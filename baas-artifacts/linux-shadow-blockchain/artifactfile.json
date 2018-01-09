@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2015-01-01/dtlArtifacts.json",
+  "title": "Shadow(Privacy on the Blockchain)",
+  "description": "Add an Linux Shadow node to the Lab",
+  "tags": [
+    "Shadow",
+    "Blockchain",
+    "Linux"
+  ],
+  "iconUri": "https://raw.githubusercontent.com/Azure/azure-blockchain-projects/master/baas-artifacts/linux-shadow-blockchain/SDCartifact.png",
+  "targetOsType": "Linux",
+   "parameters": {
+    "adminUserName": {
+      "type": "string",
+      "displayName": "Admin User Account",
+      "description": "Needs to be the same account name for the host",
+      "allowEmpty": false
+    }
+  },
+   "runCommand": {
+    "commandToExecute": "[concat('sh', ' ', 'build_shadow.sh', ' ', parameters('adminUserName'))]"
+  }
+}
